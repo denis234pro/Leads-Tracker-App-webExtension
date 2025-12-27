@@ -114,7 +114,6 @@ function displayLeads(leads){
         return; // And immediately go back home
     }
     const filteredLeads = myLeads.filter(lead => lead.toLowerCase().includes(searchTerm.toLowerCase())); // filter out what the user has typed in the search box from the main array
-    
          if (filteredLeads.length === 0){
              ulEl.innerHTML = `<li>No results Found, please try again</li>`
          }
