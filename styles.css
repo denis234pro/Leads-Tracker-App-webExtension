@@ -1,0 +1,184 @@
+body{
+background-color: white;
+ margin: 0;
+ padding: 10px;
+    min-width: 400px;
+}
+#input-el{
+    padding: 10px;
+    border: 1px solid rgb(58, 186, 107);
+    margin-top: 10px;
+    color: green;
+    font-size: 16px;
+
+}
+#input-btn{
+    margin: 10px;
+    padding: 5px;
+}
+
+input:focus{
+    border: 1px solid green;
+    outline: none;
+}
+
+ul{
+    color: green;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 0;
+}
+a{
+    color: green;
+    text-decoration: none;
+}
+#input-el{
+    width: 100%;
+    border-radius: 10px;
+}
+li{
+    list-style: none;
+    display: inline;
+
+
+}
+
+li:hover{
+    background-color: #769E7B;
+    display: inline;
+    border-radius: 5px;
+}
+label{
+    font-size: 18px;
+    font-weight: bold;
+}
+.delete-box:hover{
+    cursor: pointer;
+    display: inline;
+}
+
+input[type = 'checkbox']{
+    height: 16px;
+    width: 16px;
+}
+
+.delete-box{
+    opacity: 0;
+}
+
+li:hover .delete-box{
+    opacity: 1;
+    display: inline;
+}
+
+li:hover .delete-box , .delete-box:checked{
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    body {
+        min-width: 0;
+        padding: 5px;
+    }
+
+    .delete-box{
+        opacity: 1;
+    }
+
+    .edit-icon{
+        opacity: 1;
+    }
+
+}
+
+.edit-icon{
+    opacity: 0;
+}
+
+li:hover .edit-icon {
+    opacity: 1;
+    color: blue;
+    text-decoration: underline;
+}
+.new-input{
+    border-radius: 5px;
+    border: 1px dotted green;
+    background-color: antiquewhite;
+    color: green;
+    font-size: 16px;
+}
+
+.new-input:focus{
+    border: 1px dotted green;
+    outline: none;
+}
+
+.export-notification {
+    /* Positioning */
+    position: fixed;
+    top: 100px;
+    right: 15px;
+    z-index: 1000; /* Ensures it sits on top of everything */
+
+    /* Appearance */
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Success green */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    opacity: 1;
+    transition: opacity 0.3s; /* Smooth fade-out (optional but nice) */
+}
+
+ .dark-mode li:hover .edit-icon {
+     color: white;
+ }
+#grouped-div{
+    justify-content: right;
+}
+#search-input{
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: green;
+    padding: 7px;
+}
+.submit-btn{
+    padding: 7px;
+    border-radius: 10px;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    margin: auto auto 5px;
+
+
+}
+#themeBtn {
+    padding: 2px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+#themeBtn:hover {
+    background-color: darkgray;
+}
+.dark-mode {
+    background-color: #2e2c2c;
+    color: white;
+}
+
+.dark-mode li {
+    background-color: #333;
+    border-color: #444;
+}
+.dark-mode a {
+    color: #4da6ff;
+}
+
+.dark-mode #themeBtn {
+    border: 1px solid white;
+    font-weight: bold;
+}
