@@ -21,7 +21,7 @@ const clearAllBtn = document.getElementById('clear-all');
 const exportBtn = document.getElementById('export-btn');
 const searchInputEl = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
-
+const saveTabBtn = document.getElementById("tab-btn");
 
 //=====================================================================
 //              THEME LOGIC
@@ -99,6 +99,8 @@ function displayLeads(leads){
         })
     })
 }
+
+saveTabBtn.addEventListener("click", () => {alert("Tab saved Successfully")})
 //===============================================================================================
 //                          SEARCH LOGICS
 //==============================================================================================
@@ -112,6 +114,7 @@ function displayLeads(leads){
         displayLeads(myLeads); // if the searchTerm is empty or has no value , render all the leads in the array
         searchBtn.textContent = "search";
         return; // And immediately go back home
+        
     }
     const filteredLeads = myLeads.filter(lead => lead.toLowerCase().includes(searchTerm.toLowerCase())); // filter out what the user has typed in the search box from the main array
          if (filteredLeads.length === 0){
