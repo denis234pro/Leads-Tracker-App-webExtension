@@ -15,7 +15,7 @@ if (savedTheme === "enabled") {
 const ulEl = document.getElementById('ul-el');
 let myLeads = [];
 const inputEl = document.getElementById('input-el');
-const InputButton = document.getElementById('input-btn');
+const saveButton = document.getElementById('save-btn');
 const clearButton = document.getElementById('clear-btn');
 const clearAllBtn = document.getElementById('clear-all');
 const exportBtn = document.getElementById('export-btn');
@@ -100,7 +100,16 @@ function displayLeads(leads){
     })
 }
 
-saveTabBtn.addEventListener("click", () => {alert("Tab saved Successfully")})
+saveTabBtn.addEventListener("click", () => {
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+        const currentTab = tabs[0].url; // Grab the object property at index number 0
+        myLeads.push(currentTab); // add new url to the main box
+        localStorage.setItem("myLeads", JSON.stringify(myLeads)); // convert and save new leads into the local storage.
+        saveContent();
+        displayLeads(myLeads) // call the render leads function
+    })
+
+})
 //===============================================================================================
 //                          SEARCH LOGICS
 //==============================================================================================
@@ -184,7 +193,7 @@ inputEl.addEventListener("keyup", ev => {
     }
 })
 //====================================================================
-InputButton.addEventListener('click' , function() {
+saveButton.addEventListener('click' , function() {
     saveContent();     // 1. CREATE: Save the data.
     inputEl.value = '';// 2. Clear the input.
     displayLeads(myLeads);   // 3. READ: Re-render the list.

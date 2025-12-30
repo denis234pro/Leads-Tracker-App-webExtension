@@ -2,19 +2,19 @@ body{
 background-color: white;
  margin: 0;
  padding: 10px;
-    min-width: 400px;
+    width: 410px;
 }
 #input-el{
       padding: 5px;
       border: 1px solid rgb(58, 186, 107);
       margin-top: 10px;
-      width: 50%;
+      width: 100%;
     border-radius: 10px;
 /*    color: green;*/
 /*    font-size: 16px;*/
 
 }
-#input-btn{
+#save-btn{
     margin: 10px;
     padding: 5px;
 }
@@ -25,7 +25,7 @@ input:focus{
 }
 
 ul{
-    color: green;
+    color: #4da6ff;
     font-size: 18px;
     padding-top: 20px;
     padding-left: 0;
@@ -43,7 +43,7 @@ li{
 }
 
 li:hover{
-    background-color: #769E7B;
+    /*background-color: #769E7B;*/
     display: inline;
     border-radius: 5px;
 }
@@ -74,28 +74,28 @@ li:hover .delete-box , .delete-box:checked{
     opacity: 1;
 }
 
-@media (max-width: 600px) {
-    body {
-        min-width: 0;
-        padding: 5px;
-    }
+/*@media (max-width: 600px) {*/
+/*    body {*/
+/*        min-width: 0;*/
+/*        padding: 5px;*/
+/*    }*/
 
-    .delete-box{
-        opacity: 1;
-    }
+/*    .delete-box{*/
+/*        opacity: 1;*/
+/*    }*/
 
-    .edit-icon{
-        opacity: 1;
-    }
-    #input-el{
-        width: 100%;
-    }
-    #search-input{
-        width: 100%;
+/*    .edit-icon{*/
+/*        opacity: 1;*/
+/*    }*/
+/*    #input-el{*/
+/*        width: 100%;*/
+/*    }*/
+/*    #search-input{*/
+/*        width: 100%;*/
 
-    }
+/*    }*/
 
-}
+/*}*/
 
 .edit-icon{
     opacity: 0;
@@ -145,7 +145,7 @@ li:hover .edit-icon {
 }
 #search-input{
     border-radius: 10px;
-    border: 1px solid gray;
+    border: 1px solid green;
     color: green;
     padding: 7px;
     width: 50%;
@@ -159,7 +159,7 @@ li:hover .edit-icon {
 
 #container{
     display: flex;
-    justify-content: center;
+
     margin: auto auto 5px;
 
 
