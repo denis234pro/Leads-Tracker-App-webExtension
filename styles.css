@@ -35,6 +35,11 @@ a{
     text-decoration: none;
 }
 
+#privacy-note{
+    font-size: 12px;
+    color: #4da6ff;
+}
+
 li{
     list-style: none;
     display: inline;
