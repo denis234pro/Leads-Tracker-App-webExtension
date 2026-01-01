@@ -83,7 +83,7 @@ function displayLeads(leads){
             const newInputEL = document.querySelector(".new-input");
             const saveEditBtn = document.querySelector('.save-edited');
 
-            function saveEdited() {
+            function saveEdited() {  
                 if (newInputEL.value.trim() !== ""){
                     myLeads[leadIndex] = newInputEL.value;
                     localStorage.setItem('myLeads', JSON.stringify(myLeads));
@@ -102,11 +102,20 @@ function displayLeads(leads){
 
 saveTabBtn.addEventListener("click", () => {
     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+        if ( tabs.length === 0){
+            console.warn("No tab Found");
+            return;
+        }
         const currentTab = tabs[0].url; // Grab the object property at index number 0
+        if (currentTab.startsWith("chrome://") || currentTab.startsWith("about:") || currentTab.startsWith("file://")){
+            alert("Can't save system page");
+            return;
+        }
+
         myLeads.push(currentTab); // add new url to the main box
         localStorage.setItem("myLeads", JSON.stringify(myLeads)); // convert and save new leads into the local storage.
         saveContent();
-        displayLeads(myLeads) // call the render leads function
+        displayLeads(myLeads) // calvvjjj     l the render leads function
     })
 
 })
