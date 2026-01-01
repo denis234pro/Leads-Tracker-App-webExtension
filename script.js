@@ -47,17 +47,17 @@ themeBtn.addEventListener("click", ()  => {
 //                             DISPLAY LOGIC (READ)
 // ====================================================================
 /**
- * Renders the entire myLeads array to the webpage.
- */
+ * Renders the entire myLeads array to the webpage.*/
 function displayLeads(leads){
-
     let listElements = '';
 
     for (let i = 0; i < leads.length; i++) {
         const currentLead = leads[i]; // grab the real text first
         const realIndex = myLeads.indexOf(currentLead); // calculate and store the real index of the grabbed text .
 
-//          B . Use the extracted text and index to build the HTML string to be rendered on the page
+//          B . Use the extracted text and index to build the HTML string to be rendered
+//
+//          on the page
         listElements +=`<li data-index="${realIndex}">
                             <input type="checkbox" class= "delete-box"> 
                              <a href="https://${currentLead}"target="_blank">${currentLead}  </a> 
@@ -115,7 +115,7 @@ saveTabBtn.addEventListener("click", () => {
         myLeads.push(currentTab); // add new url to the main box
         localStorage.setItem("myLeads", JSON.stringify(myLeads)); // convert and save new leads into the local storage.
         saveContent();
-        displayLeads(myLeads) // calvvjjj     l the render leads function
+        displayLeads(myLeads) // call the render leads function
     })
 
 })
@@ -136,7 +136,7 @@ saveTabBtn.addEventListener("click", () => {
     }
     const filteredLeads = myLeads.filter(lead => lead.toLowerCase().includes(searchTerm.toLowerCase())); // filter out what the user has typed in the search box from the main array
          if (filteredLeads.length === 0){
-             ulEl.innerHTML = `<li>No results Found, please try again</li>`
+             ulEl.innerText = "No results Found, please try again";
          }
          else {
              displayLeads(filteredLeads); // calling the render function to render only what has been filtered by passing there argument (filteredLeads) which is the variable strong the filtered leads

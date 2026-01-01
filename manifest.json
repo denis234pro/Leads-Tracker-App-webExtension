@@ -7,7 +7,10 @@
 },
  "browser_specific_settings": {
    "gecko": {
-     "id": "leads-tracker@denistechug.developer"
+     "id": "leads-tracker@denistechug.developer",
+     "data_collection_permissions": {
+       "required": ["none"]
+     }
    }
  },
   "permissions": [
