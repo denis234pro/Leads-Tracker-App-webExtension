@@ -60,7 +60,7 @@ function displayLeads(leads){
 //          on the page
         listElements +=`<li data-index="${realIndex}">
                             <input type="checkbox" class= "delete-box"> 
-                             <a href="https://${currentLead}"target="_blank">${currentLead}  </a> 
+                             <a href="${currentLead}"target="_blank">${currentLead}  </a> 
                                <span class="edit-icon"> edit</span> 
                         </li>`
     }
